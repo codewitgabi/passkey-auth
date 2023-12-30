@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #222;
+  color: #fff;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#logout-btn {
+  padding: 12px 35px;
+  border: 1.5px solid white;
+  background: #444;
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 0 2em;
+}
+#complete-profile-form {
+  background: #fff;
+  padding: 1.5em;
+  color: #000;
+
+  & h2 {
+    margin-bottom: 1em;
+  }
+
+  & input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    outline: none;
+  }
+
+  & button {
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    color: #fff;
+    display: inline-block;
+    margin: 1em 0 0;
+    border: none;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Complete Profile</title>
+</head>
+<body>
+  <div class="container">
+    <form method="post" id="complete-profile-form">
+      {% csrf_token %}
+      <h2>Complete profile</h2>
+      <input 
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Username"
+       />
+      <!-- Add other profile fields here -->
+
+      <button id="btn-blue">Continue</button>
+    </form>
+  </div>
+</body>
+</html>

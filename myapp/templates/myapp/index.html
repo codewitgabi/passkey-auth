@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  </head>
+  <body>
+
+    <div class="container">
+      <hanko-auth />
+    </div>
+
+    <script>
+      const CREATE_USER_ENDPOINT = "{% url 'myapp:create_user' %}";
+      const COMPLETE_PROFILE_ENDPOINT = "/complete-profile";
+      const LOGIN_REDIRECT_URL = "{% url 'myapp:app' %}";
+    </script>
+    <script type="module" src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
