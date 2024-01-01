@@ -10,10 +10,9 @@ class PasskeyAuthenticationMiddleware:
         self.get_response = get_response
 
     def __deny(self):
-        return JsonResponse({"error": "Unauthorized"},safe=False)
+        return JsonResponse({"error": "Unauthorized"}, safe=False)
 
-
-    def __extract_token_from_header(self,header: str) -> str:
+    def __extract_token_from_header(self, header: str) -> str:
         parts = header.split()
         return parts[1] if len(parts) == 2 and parts[0].lower() == "bearer" else None
 
@@ -35,7 +34,7 @@ class PasskeyAuthenticationMiddleware:
                 ssl_context.verify_mode = ssl.CERT_NONE
             jwks_client = jwt.PyJWKClient(
                 settings.HANKO_API_URL + "/.well-known/jwks.json",
-                ssl_context=ssl_context
+                ssl_context=ssl_context,
             )
             signing_key = jwks_client.get_signing_key_from_jwt(token)
             data = jwt.decode(
@@ -55,4 +54,3 @@ class PasskeyAuthenticationMiddleware:
         response = self.get_response(request)
 
         return response
-

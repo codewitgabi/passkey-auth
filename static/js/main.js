@@ -1,6 +1,6 @@
 import { Hanko, register } from "https://esm.run/@teamhanko/hanko-elements";
 
-const hankoApi = ""
+const hankoApi = HANKO_API_URL;
 
 const { hanko } = await register(hankoApi)
 const hankoClass = new Hanko(hankoApi);
