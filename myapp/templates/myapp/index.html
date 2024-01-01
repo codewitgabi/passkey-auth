@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
 
@@ -13,7 +13,7 @@
     <script>
       const CREATE_USER_ENDPOINT = "{% url 'myapp:create_user' %}";
       const COMPLETE_PROFILE_ENDPOINT = "/complete-profile";
-      const LOGIN_REDIRECT_URL = "{% url 'myapp:app' %}";
+      const HANKO_API_URL = "{{ HANKO_API_URL }}";
     </script>
     <script type="module" src="{% static 'js/main.js' %}"></script>
   </body>

@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "myapp.apps.MyappConfig",
     "rest_framework",
 ]
@@ -51,9 +50,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
     # custom middleware
-
     # "Auth.middlewares.PasskeyAuthenticationMiddleware",
 ]
 
@@ -134,4 +131,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "myapp.User"
 
 HANKO_API_URL = os.environ.get("HANKO_API_URL")
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "Auth.backends.PasskeyAuthenticationBackend",
+]
 
