@@ -41,7 +41,7 @@ def create_user(request: HttpRequest) -> Response:
 def complete_profile(request: HttpRequest, userId) -> HttpResponse:
     user = get_object_or_404(User, id=userId)
 
-    if not user.username in ["", " "]:
+    if user.username not in ["", " "]:
         # authenticate request
 
         user = auth.authenticate(userId= user.id, email=user.email)

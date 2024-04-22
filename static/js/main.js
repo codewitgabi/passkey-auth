@@ -9,7 +9,7 @@ const hankoClass = new Hanko(hankoApi);
 hanko.onAuthFlowCompleted(async () => {
   const { id, email } = await hanko?.user?.getCurrent();
 
-  const response = await fetch(CREATE_USER_ENDPOINT, {
+  await fetch(CREATE_USER_ENDPOINT, {
     method: "POST",
     headers: {
       "content-type": "application/json",
